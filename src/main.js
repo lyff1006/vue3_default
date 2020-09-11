@@ -1,44 +1,38 @@
 import { createApp } from 'vue'
-import Antd from 'ant-design-vue';
+import Antd from 'ant-design-vue'
 console.log("Antd", Antd)
-import 'ant-design-vue/dist/antd.less';
+import 'ant-design-vue/dist/antd.less'
 import router from "./router"
 import store from "./store"
-//console.log("store", store)
-//console.log("router", router)
 
 import App from './App.vue'
 import './index.css'
 
+//引入自定义指令
 import directiveObj from "./directives"
 
-/* const App = ({
-    data:()=>({
-        currentRoute: window.location.pathname
-    }),
+//引入api
+import api from "./api"
 
-    computed: {
-        ViewComponent(){
-            const matchingPage = route[this.currentRoute] || '404'
-            return require(`./pages/${matchingPage}`).default
+//引入echarts
+import echarts from "echarts"
+import "@/assets/echartTheme/plume_1.js"
+import "@/assets/echartTheme/plume_2.js"
+
+//配置全局mixin
+const Mixin = {
+    data(){
+        return{
+            echarts,
+            api
         }
-    },
+    }
+}
 
-    render(h) {
-        return h(this.ViewComponent)
-    },
-    
-    created() {
-        window.addEventListener('popstate',()=>{
-            this.currentRoute = window.location.pathname
-        })
-    },
-}) */
 const app = createApp(App)
-
 for(let key in directiveObj){
     app.directive(key,directiveObj[key])
 }
-app.use(Antd).use(router).use(store).mount('#app')
+app.use(Antd).use(router).use(store).mixin(Mixin).mount('#app')
 
 

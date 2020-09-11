@@ -3,7 +3,7 @@
  * @author: XianPengFei
  * @lastEditors: XianPengFei
  * @Date: 2020-09-09 11:26:55
- * @LastEditTime: 2020-09-09 16:43:14
+ * @LastEditTime: 2020-09-10 15:40:49
  * @Copyright: 1.0.0
  */
 
@@ -34,7 +34,7 @@ let cdnObj = {
         'https://cdn.bootcdn.net/ajax/libs/axios/0.20.0/axios.min.js',
         'https://cdn.bootcdn.net/ajax/libs/vue-router/4.0.0-beta.7/vue-router.global.js',
         'https://cdn.bootcdn.net/ajax/libs/vuex/4.0.0-beta.4/vuex.global.min.js',
-        'https://cdn.bootcdn.net/ajax/libs/echarts/4.6.0/echarts.common.min.js',
+        'https://cdn.bootcdn.net/ajax/libs/echarts/4.9.0-rc.1/echarts-en.common.min.js',
         'https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.0.0-beta.3/antd.min.js',
     ]
 }
@@ -69,8 +69,8 @@ module.exports = {
             less: {
                 lessOptions: {
                     modifyVars: {
-                      'primary-color': '#9254de',
-                      'link-color': '#9254de',
+                      'primary-color': '#18a9d5',
+                      'link-color': '#18a9d5',
                     },
                     javascriptEnabled: true,
                 },

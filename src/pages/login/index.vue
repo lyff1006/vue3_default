@@ -3,7 +3,7 @@
  * @author: XianPengFei
  * @lastEditors: XianPengFei
  * @Date: 2020-09-09 11:20:31
- * @LastEditTime: 2020-09-09 16:44:22
+ * @LastEditTime: 2020-09-10 17:19:56
  * @Copyright: 1.0.0
 -->
 <template>
@@ -17,6 +17,8 @@
         <a-input placeholder="Basic usage"/>
         <div>用户id:{{currentUser.id}}</div>
         <div>用户名:{{currentUser.name}}</div>
+        <div>data测试:{{dataTest}}</div>
+        <div>computed测试:{{computedTest}}</div>
     </div>
 </template>
 
@@ -32,9 +34,22 @@ export default {
             currentUser
         }
     },
+    data(){
+        return{
+            dataTest:{
+                name:"8888"
+            }
+        }
+    },
+    computed:{
+        computedTest(){
+            return "77777"
+        }
+    },
     mounted(){
         console.log(this.currentUser)
         console.log(this.getCurrentUser())
+        console.log(this.echarts,this.api.indexApi)
     },
     methods:{
         ...mapActions(["updateCurrentUser"]),
@@ -67,6 +82,13 @@ export default {
             })
         },
 
+        /**
+         * @description: 退出登录
+         * @Date: 2020-09-10 13:38:33
+         * @author: XianPengFei
+         * @param {type} 
+         * @return {type} 
+         */
         logout(){
             console.log("logout")
             this.setCurrentUser({})
